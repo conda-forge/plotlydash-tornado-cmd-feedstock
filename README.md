@@ -5,11 +5,11 @@ Home: https://github.com/ideonate/plotlydash-tornado-cmd
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/plotlydash-tornado-cmd-feedstock/blob/master/LICENSE.txt)
 
 Summary: Command line wrapper to run a named Plotly Dash script inside a Tornado server
 
-
+Development: https://github.com/ideonate/plotlydash-tornado-cmd
 
 Current build status
 ====================
@@ -116,5 +116,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@danlester](https://github.com/danlester/)
 * [@fcollonval](https://github.com/fcollonval/)
 
