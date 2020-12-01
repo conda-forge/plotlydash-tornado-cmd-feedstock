@@ -27,8 +27,11 @@ requirements:
 
 test:
   imports:
-    - plotlydash_tornado_cmd
+    - plotlydash_tornado_cmd      
+  requires:
+    - pip
   commands:
+    - pip check
     - plotlydash-tornado-cmd --help
 
 about:
