@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   entry_points:
     - plotlydash-tornado-cmd = plotlydash_tornado_cmd.main:run
@@ -27,8 +27,11 @@ requirements:
 
 test:
   imports:
-    - plotlydash_tornado_cmd
+    - plotlydash_tornado_cmd      
+  requires:
+    - pip
   commands:
+    - pip check
     - plotlydash-tornado-cmd --help
 
 about:
