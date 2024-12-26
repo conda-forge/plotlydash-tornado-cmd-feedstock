@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: af508a04b6a38e03dc9add58c019ce0407b01c9053a850bd4c6c6a049f64bfaf
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   entry_points:
     - plotlydash-tornado-cmd = plotlydash_tornado_cmd.main:run
 
 requirements:
   host:
-    - python >=3.6,<4.0.0
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - tornado >=5.0
     - click >=7.0
 
@@ -30,6 +30,7 @@ test:
     - plotlydash_tornado_cmd      
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - plotlydash-tornado-cmd --help
